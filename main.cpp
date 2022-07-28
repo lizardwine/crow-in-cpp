@@ -84,9 +84,8 @@ int main(int argc, char const *argv[])
         return handleError(db);
     }
     
-
     cout<<menu<<endl;
 
     return 0;
 }
-//compile with g++ main.cpp -lsqlite3 -o crow
+//compile with g++ main.cpp -lsqlite3 -lcurl -o crow
