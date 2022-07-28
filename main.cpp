@@ -20,6 +20,7 @@
              "9.-Change page\n"        \
              "-> "
 
+
 using namespace std;
   
 
@@ -83,8 +84,33 @@ int main(int argc, char const *argv[])
     {
         return handleError(db);
     }
+    char opc;
+    string password = "",uname = "",page = "",email = "",acount = "";
+    while(opc != '0'){
+        
+        cout<<menu;
+        cin>>opc;
+        system(CLEAR_COMMAND);
+        cout<<menu<<opc<<endl;
+        switch (opc) {
+        {
+        case '0':{
+            system(CLEAR_COMMAND);
+            break;
+        }
+        case '1':{
+
+
+        }
+
+        default:{
+            cout<<"unknown command \""<<opc<<"\""<<endl;
+            break;
+        }
+        }
+    }
+    }
     
-    cout<<menu<<endl;
 
     return 0;
 }

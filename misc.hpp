@@ -9,6 +9,7 @@
 #include <pwd.h>  
 #define  OS_DIRECTORY "/home/"  
 #define  FILE_TYPE ""  
+#define  CLEAR_COMMAND "clear"  
 
 #endif  
 
@@ -16,6 +17,7 @@
 #include<Windows.h>
 #define  OS_DIRECTORY "C:/Users/"  
 #define  FILE_TYPE ".exe"  
+#define  CLEAR_COMMAND "cls"  
 
 #endif
 #include <sys/types.h>
@@ -29,7 +31,7 @@ using namespace std;
 #include <stdexcept>
 #include "indicators.hpp"
 
-// https://curl.se/libcurl/c/CURLOPT_XFERINFOFUNCTION.html
+
 int download_progress_callback(void* clientp, curl_off_t dltotal,
                                curl_off_t dlnow, curl_off_t ultotal,
                                curl_off_t ulnow)
