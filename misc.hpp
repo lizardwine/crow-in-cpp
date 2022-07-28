@@ -26,10 +26,7 @@ using namespace std;
 #include <curl/easy.h>
 
 #include <cstdio>
-#include <iostream>
 #include <stdexcept>
-#include <string>
-
 #include "indicators.hpp"
 
 // https://curl.se/libcurl/c/CURLOPT_XFERINFOFUNCTION.html
