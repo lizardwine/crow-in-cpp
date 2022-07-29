@@ -22,8 +22,37 @@
 
 
 using namespace std;
-  
+bool a_in_b(int a,int b[],int blength){
+    
+    for(int i=0;i<blength;i++){
+        if(a==b[i]){
+            return true;
+        }
+    }
+    return false;
+}
 
+int gen_random_number(int from,int to,int seed){
+    int except[] = {34,39,92,96};
+    srand((unsigned) time(0) + seed);
+    int random_number = (from + rand() % to);
+    while (a_in_b(random_number,except,sizeof(except[0])/sizeof(except)))
+    {
+        random_number = (from + rand() % to);
+    }
+    return random_number;
+}
+
+string gen_random_password(int length){
+    char pass[length];
+    pass[0] = (char)gen_random_number(33,126,0);
+    string password;
+    for(int i = 1; i < length; i++){    
+        pass[i] = (char)gen_random_number(33,126,pass[i-1]);
+    }
+    password = pass;
+    return password;
+}
 
 int check_password(string password)
 {
@@ -75,6 +104,7 @@ bool get_password()
 
 int main(int argc, char const *argv[])
 {   
+    cout<<gen_random_password(32)<<endl;
     if(!get_password()) return 0;
 
     sqlite3 *db;
@@ -100,7 +130,7 @@ int main(int argc, char const *argv[])
         }
         case '1':{
 
-
+        
         }
 
         default:{
